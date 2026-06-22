@@ -3,8 +3,8 @@
     "businessName": "Styling Betty",
     "businessType": "beauty salon",
     "slug": "styling-betty",
-    "base": "/styling-betty",
-    "siteUrl": "https://aligncompass.com",
+    "base": "/",
+    "siteUrl": "https://stylingbetty.com",
     "lang": "en",
     "tagline": "Where your beauty journey begins, and confidence shines through every strand and nail."
   },
@@ -66,29 +66,29 @@
     },
     "transitional": {
       "label": "See the portfolio",
-      "href": "/styling-betty/portfolio"
+      "href": "/portfolio"
     }
   },
   "nav": [
     {
       "label": "Home",
-      "href": "/styling-betty/"
+      "href": "/"
     },
     {
       "label": "Services",
-      "href": "/styling-betty/services"
+      "href": "/services"
     },
     {
       "label": "Portfolio",
-      "href": "/styling-betty/portfolio"
+      "href": "/portfolio"
     },
     {
       "label": "About",
-      "href": "/styling-betty/about"
+      "href": "/about"
     },
     {
       "label": "Contact",
-      "href": "/styling-betty/contact"
+      "href": "/contact"
     }
   ],
   "pages": [
@@ -509,7 +509,8 @@
     "Makeup/event glam shown (real portfolio) within event & bridal styling; source page named only nails + hair color — confirm with Betty.",
     "About-page portrait (photo-33) is a styled studio portrait; not captioned as Betty herself (identity unconfirmed).",
     "Booking handed off to existing page https://booking.stylingbetty.com (live) — not rebuilt; primary CTA + contact buttons link there.",
-    "Portfolio now shows real before/after composites uncropped (c_fit) under 'Before & after'; logo graphics (photo-03/35) and the male portrait (photo-36) intentionally excluded."
+    "Portfolio now shows real before/after composites uncropped (c_fit) under 'Before & after'; logo graphics (photo-03/35) and the male portrait (photo-36) intentionally excluded.",
+    "Live on the customer-owned domain https://stylingbetty.com (root). Canonical + OG = stylingbetty.com; not served under aligncompass.com apex."
   ],
   "branding": {
     "logo": {
