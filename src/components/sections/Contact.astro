@@ -1,6 +1,6 @@
 ---
 const { section, content } = Astro.props;
-const { nap } = content;
+const { nap, cta } = content;
 const form = section.form ?? {};
 const fields = form.fields ?? ['name', 'email', 'message'];
 // Static site: post to a real form endpoint if one is configured, otherwise
@@ -14,9 +14,16 @@ const labels = { name: 'Your name', email: 'Email', phone: 'Phone', message: 'Ho
     <div class="reveal">
       {section.heading && <h2 class="font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
       {section.body && <p class="mt-4 text-lg text-muted">{section.body}</p>}
+      {cta?.primary && section.showBooking !== false && (
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a href={cta.primary.href} target={cta.primary.href.startsWith('http') ? '_blank' : undefined} rel={cta.primary.href.startsWith('http') ? 'noopener' : undefined} class="inline-flex items-center rounded-ac bg-accent px-6 py-3 font-semibold text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">{cta.primary.label}</a>
+          {nap.whatsapp && <a href={nap.whatsapp} target="_blank" rel="noopener" class="font-medium text-ink underline-offset-4 hover:underline">WhatsApp the studio →</a>}
+        </div>
+      )}
       {section.showNap && (
         <ul class="mt-8 space-y-3 text-muted">
           {nap.phone && <li><a class="font-medium text-ink hover:text-accent" href={`tel:${nap.phone}`}>{nap.phone}</a></li>}
+          {nap.whatsapp && <li><a class="font-medium text-ink hover:text-accent" href={nap.whatsapp} target="_blank" rel="noopener">WhatsApp (786) 227-1350</a></li>}
           {nap.email && <li><a class="font-medium text-ink hover:text-accent" href={`mailto:${nap.email}`}>{nap.email}</a></li>}
           {(nap.streetAddress || nap.addressLocality) && (
             <li>{[nap.streetAddress, nap.addressLocality, nap.addressRegion, nap.postalCode].filter(Boolean).join(', ')}</li>

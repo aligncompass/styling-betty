@@ -1,0 +1,49 @@
+---
+import CloudinaryImage from '../CloudinaryImage.astro';
+const { section, content } = Astro.props;
+const { cloudinary } = content;
+const items = section.items ?? [];
+const contain = section.fit === 'contain';
+// Static class strings (Tailwind can't see interpolated names).
+const gridClass = section.columns === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3';
+---
+<section class="bg-bg">
+  <div class="mx-auto max-w-ac px-6 py-16 sm:py-20">
+    {section.heading && <h2 class="reveal font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+    {section.intro && <p class="reveal mt-3 max-w-2xl text-lg text-muted">{section.intro}</p>}
+    <div class={`mt-10 grid gap-6 ${gridClass}`}>
+      {items.map((it) => (
+        <figure class="reveal overflow-hidden rounded-ac border border-line bg-surface shadow-ac">
+          {contain ? (
+            <div class="flex items-center justify-center bg-surface p-3">
+              <CloudinaryImage
+                cloudName={cloudinary.cloudName}
+                publicId={it.publicId}
+                alt={it.alt}
+                sizes="(min-width: 1024px) 32rem, 100vw"
+                transforms="f_auto,q_auto,c_fit"
+                class="max-h-[34rem] w-auto rounded-ac object-contain"
+              />
+            </div>
+          ) : (
+            <div class="aspect-square">
+              <CloudinaryImage
+                cloudName={cloudinary.cloudName}
+                publicId={it.publicId}
+                alt={it.alt}
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          )}
+          {(it.caption || it.tag) && (
+            <figcaption class="px-4 py-3">
+              {it.tag && <span class="mb-1 mr-2 inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-accent">{it.tag}</span>}
+              {it.caption && <span class="text-sm text-muted">{it.caption}</span>}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

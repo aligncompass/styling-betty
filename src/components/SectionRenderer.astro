@@ -9,9 +9,10 @@ import Pricing from './sections/Pricing.astro';
 import Contact from './sections/Contact.astro';
 import Tiers from './sections/Tiers.astro';
 import Faq from './sections/Faq.astro';
+import Gallery from './sections/Gallery.astro';
 
 const { section, content } = Astro.props;
-const map = { hero: Hero, stakes: Stakes, value: Value, guide: Guide, plan: Plan, proof: Proof, pricing: Pricing, contact: Contact, tiers: Tiers, faq: Faq };
+const map = { hero: Hero, stakes: Stakes, value: Value, guide: Guide, plan: Plan, proof: Proof, pricing: Pricing, contact: Contact, tiers: Tiers, faq: Faq, gallery: Gallery };
 const Cmp = map[section.type];
 ---
 {Cmp ? <Cmp section={section} content={content} /> : null}

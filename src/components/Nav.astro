@@ -21,6 +21,8 @@ const home = nav[0]?.href || meta.base || '/';
       {cta?.primary && (
         <a
           href={cta.primary.href}
+          target={cta.primary.href.startsWith('http') ? '_blank' : undefined}
+          rel={cta.primary.href.startsWith('http') ? 'noopener' : undefined}
           class="inline-flex items-center rounded-ac bg-accent px-4 py-2 text-sm font-medium text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5"
         >{cta.primary.label}</a>
       )}

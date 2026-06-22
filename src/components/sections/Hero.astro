@@ -24,7 +24,7 @@ const SIGNATURE = '#19d3e0';
       )}
       <div class="mt-8 flex flex-wrap items-center gap-4">
         {cta?.primary && (
-          <a href={cta.primary.href} class="inline-flex items-center rounded-ac bg-accent px-6 py-3 font-semibold text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">{cta.primary.label}</a>
+          <a href={cta.primary.href} target={cta.primary.href.startsWith('http') ? '_blank' : undefined} rel={cta.primary.href.startsWith('http') ? 'noopener' : undefined} class="inline-flex items-center rounded-ac bg-accent px-6 py-3 font-semibold text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">{cta.primary.label}</a>
         )}
         {cta?.transitional && (
           <a href={cta.transitional.href} class:list={['inline-flex items-center font-medium underline-offset-4 hover:underline', dark ? 'text-primary-contrast' : 'text-ink']}>{cta.transitional.label} →</a>
