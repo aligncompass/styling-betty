@@ -1,12 +1,17 @@
 ---
+import { cldUrl } from '../lib/cloudinary.js';
 const { content } = Astro.props;
-const { meta, nap, nav = [], footer = {} } = content;
+const { meta, nap, nav = [], footer = {}, cloudinary = {}, branding = {} } = content;
+const logo = branding.logo;
+const logoUrl = logo && cloudinary.cloudName ? cldUrl(cloudinary.cloudName, logo.publicId, { width: 140, transforms: logo.transforms || 'c_fit,f_png' }) : '';
 const year = new Date().getFullYear();
 ---
 <footer class="border-t border-line bg-bg-muted">
   <div class="mx-auto grid max-w-ac gap-8 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
     <div class="sm:col-span-2 lg:col-span-1">
-      <p class="font-heading text-lg font-semibold text-ink">{meta.businessName}</p>
+      {logoUrl
+        ? <img src={logoUrl} alt={logo.alt || meta.businessName} width="64" height="56" class="h-14 w-auto" />
+        : <p class="font-heading text-lg font-semibold text-ink">{meta.businessName}</p>}
       {footer.blurb && <p class="mt-2 text-sm text-muted">{footer.blurb}</p>}
     </div>
     <nav aria-label="Footer">

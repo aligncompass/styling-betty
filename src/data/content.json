@@ -510,5 +510,12 @@
     "About-page portrait (photo-33) is a styled studio portrait; not captioned as Betty herself (identity unconfirmed).",
     "Booking handed off to existing page https://booking.stylingbetty.com (live) — not rebuilt; primary CTA + contact buttons link there.",
     "Portfolio now shows real before/after composites uncropped (c_fit) under 'Before & after'; logo graphics (photo-03/35) and the male portrait (photo-36) intentionally excluded."
-  ]
+  ],
+  "branding": {
+    "logo": {
+      "publicId": "styling-betty/photo-35-tempimageyxneum",
+      "alt": "Styling Betty logo — a gold line-art portrait of a woman with styled hair and manicured nails",
+      "transforms": "e_make_transparent:18,c_fit,f_png"
+    }
+  }
 }
