@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionRenderer from '../components/SectionRenderer.astro';
+import content from '../data/content.json';
+
+export function getStaticPaths() {
+  return content.pages
+    .filter((p) => p.slug !== 'index')
+    .map((p) => ({ params: { page: p.slug }, props: { page: p } }));
+}
+
+const { page } = Astro.props;
+const ogImage = page.sections.find((s) => s.image)?.image?.publicId ?? null;
+---
+<Layout content={content} page={page} ogImage={ogImage}>
+  {page.sections.map((section) => <SectionRenderer section={section} content={content} />)}
+</Layout>

@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "businessName": "Styling Betty",
+    "businessType": "beauty salon",
+    "slug": "styling-betty",
+    "base": "/styling-betty",
+    "siteUrl": "https://aligncompass.com",
+    "lang": "en",
+    "tagline": "Where your beauty journey begins, and confidence shines through every strand and nail."
+  },
+
+  "nap": {
+    "name": "Styling Betty",
+    "addressLocality": "Miami",
+    "addressRegion": "FL",
+    "addressCountry": "US",
+    "phone": "+1-786-227-1350",
+    "hours": "Mon–Fri 9am–7pm · Sat 9am–6pm · Sun 10am–5pm",
+    "serviceArea": "Miami, FL and surrounding areas"
+  },
+
+  "cloudinary": {
+    "cloudName": "aligncompass",
+    "folder": "styling-betty"
+  },
+
+  "analytics": {
+    "posthog": {
+      "enabled": true,
+      "apiKey": "phc_z9bzR7xbRS627xEzAx5aJA4oeym2atNSBtbGRyVDgDAs",
+      "host": "https://us.i.posthog.com",
+      "cookieless": true
+    }
+  },
+
+  "design": {
+    "colors": {
+      "primary": "#3a1f33",
+      "primaryContrast": "#ffffff",
+      "accent": "#8a5f14",
+      "accentContrast": "#ffffff",
+      "bg": "#fbf7f5",
+      "bgMuted": "#f6eeef",
+      "surface": "#f3e9ea",
+      "text": "#2b1a26",
+      "textMuted": "#6b5660",
+      "border": "#e7d8da"
+    },
+    "fonts": {
+      "heading": "'Cormorant Garamond', Georgia, serif",
+      "body": "'Jost', system-ui, sans-serif",
+      "googleFontsHref": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+    },
+    "scale": {
+      "radius": "0.25rem",
+      "shadow": "0 1px 2px rgba(58,31,51,0.06), 0 18px 40px rgba(58,31,51,0.08)",
+      "maxWidth": "72rem"
+    },
+    "motion": {
+      "revealEnabled": true,
+      "durationMs": 600,
+      "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  },
+
+  "cta": {
+    "primary": { "label": "Book your appointment", "href": "tel:+17862271350" },
+    "transitional": { "label": "See the portfolio", "href": "/styling-betty/portfolio" }
+  },
+
+  "nav": [
+    { "label": "Home", "href": "/styling-betty/" },
+    { "label": "Services", "href": "/styling-betty/services" },
+    { "label": "Portfolio", "href": "/styling-betty/portfolio" },
+    { "label": "About", "href": "/styling-betty/about" },
+    { "label": "Contact", "href": "/styling-betty/contact" }
+  ],
+
+  "pages": [
+    {
+      "slug": "index",
+      "path": "/",
+      "seo": {
+        "title": "Styling Betty | Luxury Hair, Color & Nail Studio in Miami",
+        "description": "A private Miami beauty studio where one stylist designs your hair color, nail design, and event look with you — so you walk out unmistakably yourself. Book today.",
+        "h1": "Your beauty, designed with you",
+        "keywords": ["miami hair salon", "hair color miami", "nail design miami", "bridal hair miami"]
+      },
+      "schema": { "type": "HairSalon" },
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Miami · By appointment",
+          "headline": "Your beauty, designed with you",
+          "subhead": "One trusted stylist for your nails, hair color, and the finishing touch — private, unrushed, and unmistakably you.",
+          "image": { "publicId": "styling-betty/photo-01-7557eb89-b6ee-4314-8587-5af99fb930cb", "alt": "A bridal half-up hairstyle with soft waves and a sparkling crystal hairpiece, styled at Styling Betty in Miami", "focal": "center" }
+        },
+        {
+          "type": "stakes",
+          "heading": "You shouldn't have to settle for \"close enough\"",
+          "items": [
+            "The rushed chair that hands you a look that isn't quite you.",
+            "The pre-event panic of trusting your big day to a salon that doesn't really listen."
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "What you get with Styling Betty",
+          "items": [
+            { "title": "Hair color that's actually yours", "body": "Designed for your skin, your style, and your hair — dimension, gloss, or a change you've been picturing." },
+            { "title": "Nail design you'll want to show off", "body": "A manicure or pedicure that feels custom, never copy-pasted — including hand-painted art and detail work." },
+            { "title": "Event & bridal styling, head to finish", "body": "Glowing and camera-ready for the day you can't redo — hair and the finishing touches, planned around your moment." }
+          ]
+        },
+        {
+          "type": "guide",
+          "heading": "One stylist who actually listens",
+          "empathy": "You deserve to be heard before anyone picks up a brush. Whether it's your wedding, your event, or a Tuesday you just want to feel good — your look should feel like you.",
+          "authority": ["Nail-design & hair-color specialist", "Private, one-on-one studio", "Premium products", "A real before/after portfolio"],
+          "image": { "publicId": "styling-betty/photo-26-img-7544", "alt": "A Styling Betty client with a glossy blowout and soft natural glam, smiling in the Miami studio", "focal": "center" }
+        },
+        {
+          "type": "plan",
+          "id": "how-it-works",
+          "heading": "How it works",
+          "steps": [
+            { "title": "Message Betty", "body": "Call or WhatsApp (786) 227-1350 and tell her about your day." },
+            { "title": "Design it together", "body": "She plans the look with you — and you approve the direction as she works." },
+            { "title": "Leave unmistakably yourself", "body": "Polished, confident, and ready to be seen." }
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "Real work, real transformations",
+          "items": [
+            { "title": "Bridal & event hair", "body": "Updos and styling for the days that matter most." },
+            { "title": "Color transformations", "body": "Dimension, gloss, and change designed around you." },
+            { "title": "Custom nail design", "body": "Manicures, pedicures, and hand-painted art." }
+          ]
+        },
+        {
+          "type": "contact",
+          "heading": "Personalized, by appointment",
+          "body": "Every appointment is private and built around you — your look, your pace. Pricing depends on what you're after, so the quickest way is a call or WhatsApp message to the studio.",
+          "form": { "enabled": false },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "services",
+      "path": "/services",
+      "seo": {
+        "title": "Services | Hair, Color, Nails & Bridal — Styling Betty Miami",
+        "description": "Hair color, cut & styling, custom nail design, and event & bridal looks — designed with you by one Miami stylist. See what Styling Betty can do for your look.",
+        "h1": "What Styling Betty does for your look",
+        "keywords": ["hair color miami", "nail design miami", "bridal hair and makeup miami", "keratin miami"]
+      },
+      "schema": { "type": "HairSalon" },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "What Styling Betty does for your look",
+          "subhead": "Every service starts the same way — listening to what you actually want.",
+          "image": { "publicId": "styling-betty/photo-04-tempimagelkna3r", "alt": "Long hair with a fresh glossy color and a smooth blowout finished at Styling Betty in Miami", "focal": "center" }
+        },
+        {
+          "type": "value",
+          "heading": "The core services",
+          "items": [
+            { "title": "Hair color that's actually yours", "body": "Balayage, all-over color, gray blending, and color correction — designed for your skin and your style." },
+            { "title": "Cut, style & finish", "body": "Precision cuts, smoothing and keratin treatments, and blowouts that keep \"I love my hair\" going between events." },
+            { "title": "Nail design you'll show off", "body": "Gel manicures and pedicures, hand-painted nail art, and rhinestone detail." },
+            { "title": "Event & bridal styling", "body": "Updos, bridal and quince hair, and event glam — planned around your dress and your day." }
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "Why it feels different here",
+          "items": [
+            { "title": "Designed with you", "body": "You approve the direction as Betty works, so there are no surprises in the mirror." },
+            { "title": "An unrushed, private chair", "body": "Your time is yours, start to finish — no conveyor belt, no being passed around." },
+            { "title": "One stylist, your whole look", "body": "Nails, hair, and finish from the person who already knows your taste — and, as your moments come, color and nail upkeep on your schedule." }
+          ]
+        },
+        {
+          "type": "contact",
+          "heading": "Ready when you are",
+          "body": "Tell Betty what you're planning and she'll take it from there.",
+          "form": { "enabled": false },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "portfolio",
+      "path": "/portfolio",
+      "seo": {
+        "title": "Portfolio | Real Hair, Color & Nail Work — Styling Betty Miami",
+        "description": "Browse real before/after work from Styling Betty's Miami studio — bridal updos, color transformations, custom nail design, and event glam.",
+        "h1": "The work",
+        "keywords": ["miami hair portfolio", "bridal hair miami", "nail art miami"]
+      },
+      "schema": { "type": "HairSalon" },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "The work",
+          "subhead": "Genuine Styling Betty looks — hair, color, nails, and event glam from the studio.",
+          "image": { "publicId": "styling-betty/photo-19-9c53f8d6-1260-4226-bc80-8ef56a0519f2", "alt": "Rich auburn curls styled into voluminous, glossy waves at Styling Betty in Miami", "focal": "center" }
+        },
+        {
+          "type": "guide",
+          "heading": "Bridal & event hair",
+          "empathy": "Updos and styling for the days that matter most — designed to last through every photo.",
+          "authority": [],
+          "image": { "publicId": "styling-betty/photo-14-5e880c70-9a0b-472b-8193-b3d782378c1e", "alt": "An elegant event updo with soft curls and delicate floral detail, styled at Styling Betty", "focal": "center" }
+        },
+        {
+          "type": "guide",
+          "heading": "Color transformations",
+          "empathy": "Dimension, gloss, and change designed around you — color that looks like it was made for your hair.",
+          "authority": [],
+          "image": { "publicId": "styling-betty/photo-06-tempimage5n0pf8", "alt": "Long curled hair after a glossy color and styling transformation in the Styling Betty studio", "focal": "center" }
+        },
+        {
+          "type": "guide",
+          "heading": "Custom nail design",
+          "empathy": "Manicures, pedicures, and hand-painted art — a finish that feels custom, never copy-pasted.",
+          "authority": [],
+          "image": { "publicId": "styling-betty/photo-08-img-20251216-wa0047", "alt": "A glossy red gel manicure with gold glitter accent nails, done at Styling Betty in Miami", "focal": "center" }
+        },
+        {
+          "type": "guide",
+          "heading": "Event glam",
+          "empathy": "Polished, camera-ready finishes for the moment you've been getting ready for.",
+          "authority": [],
+          "image": { "publicId": "styling-betty/photo-21-img-20251216-wa0058", "alt": "Soft, polished event makeup with a luminous finish, completed at Styling Betty", "focal": "center" }
+        },
+        {
+          "type": "contact",
+          "heading": "Love a look? Let's design yours.",
+          "body": "Call or WhatsApp the studio and tell Betty what you have in mind.",
+          "form": { "enabled": false },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "path": "/about",
+      "seo": {
+        "title": "About Betty | Personalized Beauty in Miami — Styling Betty",
+        "description": "Meet the stylist behind Styling Betty — a Miami nail-design and hair-color specialist who designs your whole look with you, privately and unrushed.",
+        "h1": "Meet Styling Betty",
+        "keywords": ["miami stylist", "personalized salon miami"]
+      },
+      "schema": { "type": "HairSalon" },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "Meet Styling Betty",
+          "subhead": "Where your beauty journey begins — and confidence shines through every strand and nail.",
+          "image": { "publicId": "styling-betty/photo-33-tempimagem2agtw", "alt": "A polished beauty portrait with rich burgundy hair and soft glam, representing the Styling Betty studio look", "focal": "center" }
+        },
+        {
+          "type": "guide",
+          "heading": "Beauty that feels like you",
+          "empathy": "Too many salons rush you and hand you a look that isn't yours. Betty built Styling Betty to be the opposite — a private studio where your look is designed with you, by someone who specializes in nail design and hair color and treats your appointment as yours alone.",
+          "authority": ["Nail-design & hair-color specialist", "Private, by-appointment studio", "Premium products", "A real portfolio across hair, nails & glam"],
+          "image": { "publicId": "styling-betty/photo-26-img-7544", "alt": "A Styling Betty client with a glossy blowout and natural glam in the Miami studio", "focal": "center" }
+        },
+        {
+          "type": "contact",
+          "heading": "Come see for yourself",
+          "body": "Book a private appointment and let's design your look together.",
+          "form": { "enabled": false },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "path": "/contact",
+      "seo": {
+        "title": "Book an Appointment | Styling Betty — Miami",
+        "description": "Book your private appointment at Styling Betty in Miami. Call or WhatsApp (786) 227-1350 for hair color, nail design, and event styling.",
+        "h1": "Book your appointment",
+        "keywords": ["book hair appointment miami", "styling betty miami contact"]
+      },
+      "schema": { "type": "HairSalon" },
+      "sections": [
+        {
+          "type": "contact",
+          "heading": "Book your appointment",
+          "body": "Tell Betty about your day — your event, your look, or just that you want to feel put-together — and she'll take it from there. The fastest way to reach the studio is a call or WhatsApp message to (786) 227-1350.",
+          "form": { "enabled": false },
+          "showNap": true
+        }
+      ]
+    }
+  ],
+
+  "footer": {
+    "blurb": "Styling Betty — luxury hair color, nail design & event styling in Miami, by appointment.",
+    "showHours": true
+  },
+
+  "flags": [
+    "No street address or email published on source — omitted from NAP/schema (not invented); confirm with Betty.",
+    "No published prices — routed to phone/WhatsApp; no numbers invented.",
+    "No written testimonials supplied — Portfolio page of real work used instead of a fabricated proof section.",
+    "Palette + type are art-direction assumptions (no client signal): aubergine #3a1f33, champagne-gold #8a5f14, Cormorant Garamond + Jost — confirm with Betty.",
+    "Makeup/event glam shown (real portfolio) within event & bridal styling; source page named only nails + hair color — confirm with Betty.",
+    "About-page portrait (photo-33) is a styled studio portrait; not captioned as Betty herself (identity unconfirmed)."
+  ]
+}

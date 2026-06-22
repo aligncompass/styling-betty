@@ -1,0 +1,33 @@
+---
+import CloudinaryImage from '../CloudinaryImage.astro';
+const { section, content } = Astro.props;
+const { cloudinary } = content;
+const img = section.image;
+const authority = section.authority ?? [];
+---
+<section class="bg-bg-muted">
+  <div class="mx-auto grid max-w-ac items-center gap-10 px-6 py-16 sm:py-20 lg:grid-cols-2">
+    {img && (
+      <div class="reveal order-last lg:order-first">
+        <CloudinaryImage
+          cloudName={cloudinary.cloudName}
+          publicId={img.publicId}
+          alt={img.alt}
+          sizes="(min-width: 1024px) 36rem, 100vw"
+          class="aspect-square w-full rounded-ac object-cover shadow-ac"
+        />
+      </div>
+    )}
+    <div class={`reveal ${img ? '' : 'lg:col-span-2'}`}>
+      {section.heading && <h2 class="font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+      {section.empathy && <p class="mt-5 text-lg text-muted">{section.empathy}</p>}
+      {authority.length > 0 && (
+        <ul class="mt-6 flex flex-wrap gap-3">
+          {authority.map((a) => (
+            <li class="rounded-full border border-line bg-bg px-4 py-2 text-sm font-medium text-ink">{a}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>

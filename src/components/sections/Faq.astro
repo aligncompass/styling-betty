@@ -1,0 +1,36 @@
+---
+// FAQ section: accessible native <details> disclosures + FAQPage JSON-LD.
+// Renders only from supplied items — no invented questions.
+const { section } = Astro.props;
+const items = (section.items ?? []).filter((it) => it && it.q && it.a);
+const faqSchema = items.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map((it) => ({
+        '@type': 'Question',
+        name: it.q,
+        acceptedAnswer: { '@type': 'Answer', text: it.a },
+      })),
+    }
+  : null;
+---
+<section class="bg-bg">
+  <div class="mx-auto max-w-3xl px-6 py-16 sm:py-20">
+    {section.heading && (
+      <h2 class="reveal font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>
+    )}
+    <div class="mt-10 divide-y divide-line border-y border-line">
+      {items.map((it) => (
+        <details class="group py-2">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-lg font-medium text-ink [&::-webkit-details-marker]:hidden">
+            <span>{it.q}</span>
+            <span aria-hidden="true" class="shrink-0 text-accent transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="pb-5 pr-8 text-muted">{it.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</section>

@@ -1,0 +1,17 @@
+---
+import Hero from './sections/Hero.astro';
+import Stakes from './sections/Stakes.astro';
+import Value from './sections/Value.astro';
+import Guide from './sections/Guide.astro';
+import Plan from './sections/Plan.astro';
+import Proof from './sections/Proof.astro';
+import Pricing from './sections/Pricing.astro';
+import Contact from './sections/Contact.astro';
+import Tiers from './sections/Tiers.astro';
+import Faq from './sections/Faq.astro';
+
+const { section, content } = Astro.props;
+const map = { hero: Hero, stakes: Stakes, value: Value, guide: Guide, plan: Plan, proof: Proof, pricing: Pricing, contact: Contact, tiers: Tiers, faq: Faq };
+const Cmp = map[section.type];
+---
+{Cmp ? <Cmp section={section} content={content} /> : null}

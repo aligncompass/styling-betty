@@ -1,0 +1,144 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { cldUrl } from '../lib/cloudinary.js';
+
+const { content, page, ogImage } = Astro.props;
+const { meta, nap, design, cloudinary, analytics } = content;
+const ph = analytics?.posthog;
+const phOn = Boolean(ph?.enabled && ph?.apiKey);
+
+// Canonical = apex site + this page's path (which already includes the base/slug).
+const canonical = new URL(Astro.url.pathname, Astro.site ?? meta.siteUrl).href;
+const seo = page.seo ?? {};
+
+// Design tokens → CSS variables. Single source of truth is content.json.design.
+const c = design.colors;
+const f = design.fonts;
+const s = design.scale;
+const m = design.motion ?? {};
+const tokenCss = `:root{
+  --ac-primary:${c.primary};--ac-primary-contrast:${c.primaryContrast};
+  --ac-accent:${c.accent};--ac-accent-contrast:${c.accentContrast};
+  --ac-bg:${c.bg};--ac-bg-muted:${c.bgMuted};--ac-surface:${c.surface};
+  --ac-text:${c.text};--ac-text-muted:${c.textMuted};--ac-border:${c.border};
+  --ac-font-heading:${f.heading};--ac-font-body:${f.body};
+  --ac-radius:${s.radius};--ac-shadow:${s.shadow};--ac-max:${s.maxWidth};
+  --ac-motion-duration:${m.durationMs ?? 500}ms;--ac-motion-easing:${m.easing ?? 'ease'};
+}`;
+
+// LocalBusiness/LegalService JSON-LD from the NAP — only real, supplied fields.
+// Address sub-fields are included only when present, and the address object is
+// omitted entirely for a virtual business with no physical location (so the
+// schema never carries empty strings).
+const addr = Object.fromEntries(
+  Object.entries({
+    streetAddress: nap.streetAddress,
+    addressLocality: nap.addressLocality,
+    addressRegion: nap.addressRegion,
+    postalCode: nap.postalCode,
+    addressCountry: nap.addressCountry,
+  }).filter(([, v]) => v),
+);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': page.schema?.type ?? 'LocalBusiness',
+  name: nap.name,
+  ...(meta.tagline ? { description: meta.tagline } : {}),
+  url: canonical,
+  ...(nap.phone ? { telephone: nap.phone } : {}),
+  ...(nap.email ? { email: nap.email } : {}),
+  ...(Object.keys(addr).length ? { address: { '@type': 'PostalAddress', ...addr } } : {}),
+  ...(nap.serviceArea ? { areaServed: nap.serviceArea } : {}),
+};
+
+const ogImg = ogImage
+  ? cldUrl(cloudinary.cloudName, ogImage, { transforms: 'f_auto,q_auto,c_fill,g_auto,w_1200,h_630' })
+  : null;
+---
+<!doctype html>
+<html lang={meta.lang || 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{seo.title || meta.businessName}</title>
+    {seo.description && <meta name="description" content={seo.description} />}
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seo.title || meta.businessName} />
+    {seo.description && <meta property="og:description" content={seo.description} />}
+    <meta property="og:url" content={canonical} />
+    {ogImg && <meta property="og:image" content={ogImg} />}
+    <meta name="twitter:card" content={ogImg ? 'summary_large_image' : 'summary'} />
+
+    {f.googleFontsHref && (
+      <>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href={f.googleFontsHref} />
+      </>
+    )}
+    <style set:html={tokenCss}></style>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    {phOn && (
+      <script
+        is:inline
+        define:vars={{
+          phKey: ph.apiKey,
+          phHost: ph.host || 'https://us.i.posthog.com',
+          phCookieless: ph.cookieless !== false,
+          phSlug: meta.slug,
+          phBusiness: meta.businessName,
+        }}
+      >
+        (function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = phHost.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+          s.onload = function () {
+            window.posthog.init(phKey, {
+              api_host: phHost,
+              persistence: phCookieless ? 'memory' : 'localStorage+cookie',
+              person_profiles: 'identified_only',
+              capture_pageview: true,
+              autocapture: true,
+            });
+            window.posthog.register({ ac_site: phSlug, ac_business: phBusiness });
+          };
+          document.head.appendChild(s);
+        })();
+      </script>
+    )}
+  </head>
+  <body>
+    <Nav content={content} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer content={content} />
+
+    <script>
+      // Scroll-reveal: progressive enhancement only.
+      const els = document.querySelectorAll('.reveal');
+      if (els.length && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.1 },
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-visible'));
+      }
+    </script>
+  </body>
+</html>

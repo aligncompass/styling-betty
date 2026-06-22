@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionRenderer from '../components/SectionRenderer.astro';
+import content from '../data/content.json';
+
+const page = content.pages.find((p) => p.slug === 'index') ?? content.pages[0];
+const ogImage = page.sections.find((s) => s.image)?.image?.publicId ?? null;
+---
+<Layout content={content} page={page} ogImage={ogImage}>
+  {page.sections.map((section) => <SectionRenderer section={section} content={content} />)}
+</Layout>

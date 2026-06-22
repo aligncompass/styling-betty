@@ -1,0 +1,22 @@
+---
+const { section } = Astro.props;
+const includes = section.includes ?? [];
+---
+<section class="bg-bg">
+  <div class="mx-auto max-w-ac px-6 py-16 sm:py-20">
+    <div class="reveal mx-auto max-w-2xl rounded-ac border border-line bg-surface p-8 text-center sm:p-10">
+      {section.heading && <h2 class="font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+      {section.price && <p class="mt-6 font-heading text-4xl font-semibold text-ink">{section.price}</p>}
+      {includes.length > 0 && (
+        <ul class="mx-auto mt-6 max-w-sm space-y-2 text-left">
+          {includes.map((it) => (
+            <li class="flex gap-3 text-muted"><svg aria-hidden="true" class="mt-1 h-4 w-4 flex-none text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>{it}</span></li>
+          ))}
+        </ul>
+      )}
+      {section.cta && (
+        <a href={section.cta.href} class="mt-8 inline-flex items-center rounded-ac bg-accent px-6 py-3 font-medium text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">{section.cta.label}</a>
+      )}
+    </div>
+  </div>
+</section>

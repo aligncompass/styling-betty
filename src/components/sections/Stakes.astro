@@ -1,0 +1,19 @@
+---
+const { section } = Astro.props;
+const items = section.items ?? [];
+---
+<section class="bg-bg">
+  <div class="mx-auto max-w-ac px-6 py-16">
+    <div class="reveal rounded-ac border border-line bg-surface p-8 sm:p-10">
+      {section.heading && <h2 class="font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+      <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+        {items.map((item) => (
+          <li class="flex gap-3 text-muted">
+            <svg aria-hidden="true" class="mt-1 h-4 w-4 flex-none text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+import CloudinaryImage from '../CloudinaryImage.astro';
+const { section, content } = Astro.props;
+const { cloudinary, cta } = content;
+const img = section.image;
+const stat = section.stat;          // optional signature numeral: { value, unit, label }
+const dark = section.variant === 'dark';
+// Signature cooling-cyan — high-contrast on the dark teal block (6.76:1). One-off accent
+// for the signature moment; see 03b-design-brief.md (the "cold air made visible" numeral).
+const SIGNATURE = '#19d3e0';
+---
+<section class:list={['relative overflow-hidden', dark ? 'bg-primary' : 'bg-bg-muted']}>
+  <div class="mx-auto grid max-w-ac items-center gap-10 px-6 py-16 sm:py-24 lg:grid-cols-2">
+    <div class="reveal">
+      {section.eyebrow && (
+        <p
+          class:list={['mb-4 text-sm font-semibold uppercase tracking-[0.12em]', { 'text-accent': !dark }]}
+          style={dark ? `color:${SIGNATURE}` : undefined}
+        >{section.eyebrow}</p>
+      )}
+      <h1 class:list={['font-heading text-5xl font-bold uppercase leading-[0.95] tracking-tight sm:text-6xl', dark ? 'text-primary-contrast' : 'text-ink']}>{section.headline}</h1>
+      {section.subhead && (
+        <p class:list={['mt-5 max-w-xl text-lg', dark ? 'text-primary-contrast/85' : 'text-muted']}>{section.subhead}</p>
+      )}
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        {cta?.primary && (
+          <a href={cta.primary.href} class="inline-flex items-center rounded-ac bg-accent px-6 py-3 font-semibold text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">{cta.primary.label}</a>
+        )}
+        {cta?.transitional && (
+          <a href={cta.transitional.href} class:list={['inline-flex items-center font-medium underline-offset-4 hover:underline', dark ? 'text-primary-contrast' : 'text-ink']}>{cta.transitional.label} →</a>
+        )}
+      </div>
+    </div>
+
+    {stat ? (
+      <div class="reveal flex flex-col items-center justify-center text-center lg:items-end lg:text-right">
+        <div class="flex items-start justify-center font-heading font-bold leading-none" style={`color:${SIGNATURE}`}>
+          <span class="text-[8rem] sm:text-[11rem] lg:text-[13rem]">{stat.value}</span>
+          {stat.unit && <span class="mt-4 text-4xl sm:text-5xl">{stat.unit}</span>}
+        </div>
+        {stat.label && (
+          <p class:list={['mt-2 max-w-xs text-sm uppercase tracking-[0.12em]', dark ? 'text-primary-contrast/75' : 'text-muted']}>{stat.label}</p>
+        )}
+      </div>
+    ) : img ? (
+      <div class="reveal">
+        <CloudinaryImage
+          cloudName={cloudinary.cloudName}
+          publicId={img.publicId}
+          alt={img.alt}
+          loading="eager"
+          fetchpriority="high"
+          sizes="(min-width: 1024px) 40rem, 100vw"
+          class="aspect-[4/3] w-full rounded-ac object-cover shadow-ac"
+        />
+      </div>
+    ) : null}
+  </div>
+</section>

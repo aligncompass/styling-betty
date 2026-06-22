@@ -1,0 +1,33 @@
+---
+import { cldUrl, cldSrcset } from '../lib/cloudinary.js';
+
+const {
+  cloudName,
+  publicId,
+  alt,
+  sizes = '100vw',
+  loading = 'lazy',
+  fetchpriority,
+  widths,
+  transforms,
+  class: className = '',
+} = Astro.props;
+
+// No image slot supplied → render nothing (never a broken <img> or a fabricated
+// placeholder). The build flags missing required images in the Build Notes.
+const has = Boolean(cloudName && publicId);
+const src = has ? cldUrl(cloudName, publicId, { width: 1440, transforms }) : '';
+const srcset = has ? cldSrcset(cloudName, publicId, { transforms }) : '';
+---
+{has && (
+  <img
+    src={src}
+    srcset={srcset}
+    sizes={sizes}
+    alt={alt || ''}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+    class={className}
+  />
+)}

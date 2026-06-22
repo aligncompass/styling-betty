@@ -1,0 +1,43 @@
+---
+const { content } = Astro.props;
+const { meta, nav = [], cta } = content;
+const here = Astro.url.pathname.replace(/\/$/, '');
+const isCurrent = (href) => here === href.replace(/\/$/, '');
+const home = nav[0]?.href || meta.base || '/';
+---
+<header class="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur">
+  <div class="mx-auto flex max-w-ac items-center justify-between gap-4 px-6 py-4">
+    <a href={home} class="font-heading text-lg font-semibold text-ink">{meta.businessName}</a>
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isCurrent(item.href) ? 'page' : undefined}
+          class={`text-sm text-muted transition-colors hover:text-ink ${isCurrent(item.href) ? 'text-ink' : ''}`}
+        >{item.label}</a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-3">
+      {cta?.primary && (
+        <a
+          href={cta.primary.href}
+          class="inline-flex items-center rounded-ac bg-accent px-4 py-2 text-sm font-medium text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5"
+        >{cta.primary.label}</a>
+      )}
+      <details class="relative md:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-ac border border-line text-ink [&::-webkit-details-marker]:hidden" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </summary>
+        <div class="absolute right-0 z-50 mt-3 w-56 rounded-ac border border-line bg-bg p-2 shadow-ac">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={isCurrent(item.href) ? 'page' : undefined}
+              class={`block rounded-ac px-3 py-2 text-sm transition-colors hover:bg-bg-muted ${isCurrent(item.href) ? 'text-ink' : 'text-muted'}`}
+            >{item.label}</a>
+          ))}
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

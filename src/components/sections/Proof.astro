@@ -1,0 +1,19 @@
+---
+const { section } = Astro.props;
+const testimonials = section.testimonials ?? [];
+---
+<section class="bg-bg-muted">
+  <div class="mx-auto max-w-ac px-6 py-16 sm:py-20">
+    {section.heading && <h2 class="reveal font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {testimonials.map((t) => (
+        <figure class="reveal flex flex-col rounded-ac border border-line bg-bg p-6 shadow-ac">
+          <blockquote class="text-ink">“{t.quote}”</blockquote>
+          <figcaption class="mt-4 text-sm text-muted">
+            <span class="font-medium text-ink">{t.name}</span>{t.detail && <span> · {t.detail}</span>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

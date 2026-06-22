@@ -1,0 +1,18 @@
+---
+const { section } = Astro.props;
+const steps = section.steps ?? [];
+---
+<section id={section.id} class="bg-bg">
+  <div class="mx-auto max-w-ac px-6 py-16 sm:py-20">
+    {section.heading && <h2 class="reveal font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+    <ol class="mt-10 grid gap-6 sm:grid-cols-3">
+      {steps.map((step, i) => (
+        <li class="reveal rounded-ac border border-line bg-surface p-6">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accent font-heading font-semibold text-accent-contrast">{i + 1}</span>
+          <h3 class="mt-4 font-heading text-lg font-semibold text-ink">{step.title}</h3>
+          <p class="mt-2 text-muted">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

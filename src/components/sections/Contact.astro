@@ -1,0 +1,47 @@
+---
+const { section, content } = Astro.props;
+const { nap } = content;
+const form = section.form ?? {};
+const fields = form.fields ?? ['name', 'email', 'message'];
+// Static site: post to a real form endpoint if one is configured, otherwise
+// fall back to a mailto so the button always does something real. A booking
+// widget, when present, is a link/tel target — never a fake backend.
+const action = form.endpoint || (nap.email ? `mailto:${nap.email}` : undefined);
+const labels = { name: 'Your name', email: 'Email', phone: 'Phone', message: 'How can we help?' };
+---
+<section class="bg-bg-muted">
+  <div class="mx-auto grid max-w-ac gap-10 px-6 py-16 sm:py-20 lg:grid-cols-2">
+    <div class="reveal">
+      {section.heading && <h2 class="font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+      {section.body && <p class="mt-4 text-lg text-muted">{section.body}</p>}
+      {section.showNap && (
+        <ul class="mt-8 space-y-3 text-muted">
+          {nap.phone && <li><a class="font-medium text-ink hover:text-accent" href={`tel:${nap.phone}`}>{nap.phone}</a></li>}
+          {nap.email && <li><a class="font-medium text-ink hover:text-accent" href={`mailto:${nap.email}`}>{nap.email}</a></li>}
+          {(nap.streetAddress || nap.addressLocality) && (
+            <li>{[nap.streetAddress, nap.addressLocality, nap.addressRegion, nap.postalCode].filter(Boolean).join(', ')}</li>
+          )}
+          {nap.hours && <li>{nap.hours}</li>}
+        </ul>
+      )}
+    </div>
+    {form.enabled && action && (
+      <form class="reveal space-y-4 rounded-ac border border-line bg-bg p-6 shadow-ac" action={action} method={form.endpoint ? 'POST' : undefined}>
+        {fields.map((field) => (
+          field === 'message' ? (
+            <textarea name="message" rows="4" required placeholder={labels.message} class="w-full rounded-ac border border-line bg-bg px-4 py-3 text-ink"></textarea>
+          ) : (
+            <input
+              name={field}
+              type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
+              required={field !== 'phone'}
+              placeholder={labels[field] || field}
+              class="w-full rounded-ac border border-line bg-bg px-4 py-3 text-ink"
+            />
+          )
+        ))}
+        <button type="submit" class="inline-flex items-center rounded-ac bg-accent px-6 py-3 font-medium text-accent-contrast shadow-ac transition-transform hover:-translate-y-0.5">Send</button>
+      </form>
+    )}
+  </div>
+</section>

@@ -1,0 +1,9 @@
+# Astro / Node build artifacts — never committed to a customer repo
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.production
+npm-debug.log*
+.DS_Store

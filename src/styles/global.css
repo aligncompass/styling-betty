@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base, on top of Tailwind. Theme colors/fonts come from the CSS variables
+   injected by Layout.astro from content.json's design block. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--ac-bg);
+    color: var(--ac-text);
+    font-family: var(--ac-font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--ac-font-heading);
+    color: var(--ac-text);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ac-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Light, tasteful scroll-reveal — the free premium touch. Honors
+   prefers-reduced-motion and degrades to fully visible if JS never runs. */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--ac-motion-duration, 500ms) var(--ac-motion-easing, ease),
+      transform var(--ac-motion-duration, 500ms) var(--ac-motion-easing, ease);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

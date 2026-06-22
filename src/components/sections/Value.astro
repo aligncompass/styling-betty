@@ -1,0 +1,17 @@
+---
+const { section } = Astro.props;
+const items = section.items ?? [];
+---
+<section class="bg-bg">
+  <div class="mx-auto max-w-ac px-6 py-16 sm:py-20">
+    {section.heading && <h2 class="reveal font-heading text-2xl font-semibold text-ink sm:text-3xl">{section.heading}</h2>}
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <div class="reveal rounded-ac border border-line bg-bg p-6 shadow-ac">
+          <h3 class="font-heading text-lg font-semibold text-ink">{item.title}</h3>
+          <p class="mt-2 text-muted">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
