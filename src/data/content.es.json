@@ -1,0 +1,523 @@
+{
+  "meta": {
+    "businessName": "Styling Betty",
+    "businessType": "beauty salon",
+    "slug": "styling-betty",
+    "base": "/es",
+    "siteUrl": "https://stylingbetty.com",
+    "lang": "es",
+    "tagline": "Donde comienza tu viaje de belleza, y la confianza brilla en cada hebra y cada uña."
+  },
+  "nap": {
+    "name": "Styling Betty",
+    "addressLocality": "Miami",
+    "addressRegion": "FL",
+    "addressCountry": "US",
+    "phone": "+1-786-227-1350",
+    "hours": "Lun–Vie 9am–7pm · Sáb 9am–6pm · Dom 10am–5pm",
+    "serviceArea": "Miami, FL y alrededores",
+    "whatsapp": "https://wa.me/17862271350"
+  },
+  "cloudinary": {
+    "cloudName": "aligncompass",
+    "folder": "styling-betty"
+  },
+  "analytics": {
+    "posthog": {
+      "enabled": true,
+      "apiKey": "phc_z9bzR7xbRS627xEzAx5aJA4oeym2atNSBtbGRyVDgDAs",
+      "host": "https://us.i.posthog.com",
+      "cookieless": true
+    }
+  },
+  "design": {
+    "colors": {
+      "primary": "#3a1f33",
+      "primaryContrast": "#ffffff",
+      "accent": "#8a5f14",
+      "accentContrast": "#ffffff",
+      "bg": "#fbf7f5",
+      "bgMuted": "#f6eeef",
+      "surface": "#f3e9ea",
+      "text": "#2b1a26",
+      "textMuted": "#6b5660",
+      "border": "#e7d8da"
+    },
+    "fonts": {
+      "heading": "'Cormorant Garamond', Georgia, serif",
+      "body": "'Jost', system-ui, sans-serif",
+      "googleFontsHref": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+    },
+    "scale": {
+      "radius": "0.25rem",
+      "shadow": "0 1px 2px rgba(58,31,51,0.06), 0 18px 40px rgba(58,31,51,0.08)",
+      "maxWidth": "72rem"
+    },
+    "motion": {
+      "revealEnabled": true,
+      "durationMs": 600,
+      "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  },
+  "cta": {
+    "primary": {
+      "label": "Reserva tu cita",
+      "href": "https://booking.stylingbetty.com"
+    },
+    "transitional": {
+      "label": "Ver el portafolio",
+      "href": "/es/portfolio"
+    }
+  },
+  "nav": [
+    {
+      "label": "Inicio",
+      "href": "/es/"
+    },
+    {
+      "label": "Servicios",
+      "href": "/es/services"
+    },
+    {
+      "label": "Portafolio",
+      "href": "/es/portfolio"
+    },
+    {
+      "label": "Sobre Betty",
+      "href": "/es/about"
+    },
+    {
+      "label": "Contacto",
+      "href": "/es/contact"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "index",
+      "path": "/",
+      "seo": {
+        "title": "Styling Betty | Estudio de Cabello, Color y Uñas de Lujo en Miami",
+        "description": "Un estudio de belleza privado en Miami donde una sola estilista diseña contigo tu color de cabello, el diseño de tus uñas y tu look para eventos — para que salgas siendo inconfundiblemente tú. Reserva hoy.",
+        "h1": "Tu belleza, diseñada contigo",
+        "keywords": [
+          "salón de belleza miami",
+          "color de cabello miami",
+          "diseño de uñas miami",
+          "peinado de novia miami"
+        ]
+      },
+      "schema": {
+        "type": "HairSalon"
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Miami · Con cita previa",
+          "headline": "Tu belleza, diseñada contigo",
+          "subhead": "Una estilista de confianza para tus uñas, tu color de cabello y los toques finales — en privado, sin prisas y siendo inconfundiblemente tú.",
+          "image": {
+            "publicId": "styling-betty/photo-01-7557eb89-b6ee-4314-8587-5af99fb930cb",
+            "alt": "Un peinado de novia recogido a medias con ondas suaves y un broche de cristal brillante, realizado en Styling Betty en Miami",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "stakes",
+          "heading": "No deberías conformarte con algo \"más o menos\"",
+          "items": [
+            "La silla apurada que te entrega un look que no es del todo tuyo.",
+            "El pánico antes del evento de confiar tu gran día a un salón que no te escucha de verdad."
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "Lo que obtienes con Styling Betty",
+          "items": [
+            {
+              "title": "Color de cabello que de verdad es tuyo",
+              "body": "Diseñado para tu piel, tu estilo y tu cabello — dimensión, brillo o ese cambio que has estado imaginando."
+            },
+            {
+              "title": "Diseño de uñas que querrás presumir",
+              "body": "Una manicura o pedicura que se siente a medida, nunca copiada — incluyendo arte pintado a mano y detalles."
+            },
+            {
+              "title": "Estilismo para eventos y novias, de principio a fin",
+              "body": "Radiante y lista para la cámara en el día que no se puede repetir — cabello y toques finales, pensados para tu momento."
+            }
+          ]
+        },
+        {
+          "type": "guide",
+          "heading": "Una estilista que de verdad te escucha",
+          "empathy": "Mereces que te escuchen antes de que alguien tome una brocha. Ya sea tu boda, tu evento o un martes en el que solo quieres sentirte bien — tu look debería sentirse como tú.",
+          "authority": [
+            "Especialista en diseño de uñas y color de cabello",
+            "Estudio privado y personalizado",
+            "Productos premium",
+            "Un portafolio real de antes y después"
+          ],
+          "image": {
+            "publicId": "styling-betty/photo-26-img-7544",
+            "alt": "Una clienta de Styling Betty con un brushing brillante y un glam natural suave, sonriendo en el estudio de Miami",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "plan",
+          "id": "how-it-works",
+          "heading": "Cómo funciona",
+          "steps": [
+            {
+              "title": "Escríbele a Betty",
+              "body": "Llama o escribe por WhatsApp al (786) 227-1350 y cuéntale sobre tu día."
+            },
+            {
+              "title": "Diseñen el look juntas",
+              "body": "Ella planea el look contigo — y tú apruebas la dirección mientras trabaja."
+            },
+            {
+              "title": "Sal siendo inconfundiblemente tú",
+              "body": "Impecable, segura y lista para lucirte."
+            }
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "Trabajo real, transformaciones reales",
+          "items": [
+            {
+              "title": "Cabello para novias y eventos",
+              "body": "Recogidos y peinados para los días más importantes."
+            },
+            {
+              "title": "Transformaciones de color",
+              "body": "Dimensión, brillo y cambio diseñados para ti."
+            },
+            {
+              "title": "Diseño de uñas personalizado",
+              "body": "Manicuras, pedicuras y arte pintado a mano."
+            }
+          ]
+        },
+        {
+          "type": "contact",
+          "heading": "Personalizado, con cita previa",
+          "body": "Cada cita es privada y pensada para ti — tu look, tu ritmo. El precio depende de lo que busques, así que lo más rápido es una llamada o un mensaje de WhatsApp al estudio.",
+          "form": {
+            "enabled": false
+          },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "services",
+      "path": "/services",
+      "seo": {
+        "title": "Servicios | Cabello, Color, Uñas y Novias — Styling Betty Miami",
+        "description": "Color de cabello, corte y peinado, diseño de uñas personalizado y looks para eventos y novias — diseñados contigo por una sola estilista en Miami. Descubre lo que Styling Betty puede hacer por tu look.",
+        "h1": "Lo que Styling Betty hace por tu look",
+        "keywords": [
+          "color de cabello miami",
+          "diseño de uñas miami",
+          "peinado y maquillaje de novia miami",
+          "keratina miami"
+        ]
+      },
+      "schema": {
+        "type": "HairSalon"
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "Lo que Styling Betty hace por tu look",
+          "subhead": "Cada servicio empieza igual — escuchando lo que de verdad quieres.",
+          "image": {
+            "publicId": "styling-betty/photo-04-tempimagelkna3r",
+            "alt": "Cabello largo con un color fresco y brillante y un brushing suave, terminado en Styling Betty en Miami",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "value",
+          "heading": "Los servicios principales",
+          "items": [
+            {
+              "title": "Color de cabello que de verdad es tuyo",
+              "body": "Balayage, color completo, cobertura de canas y corrección de color — diseñados para tu piel y tu estilo."
+            },
+            {
+              "title": "Corte, peinado y acabado",
+              "body": "Cortes de precisión, tratamientos de alisado y keratina, y brushings que mantienen el \"amo mi cabello\" entre un evento y otro."
+            },
+            {
+              "title": "Diseño de uñas para presumir",
+              "body": "Manicuras y pedicuras en gel, arte de uñas pintado a mano y detalles con cristales."
+            },
+            {
+              "title": "Estilismo para eventos y novias",
+              "body": "Recogidos, peinados de novia y de quinceañera, y glam para eventos — pensados para tu vestido y tu día."
+            }
+          ]
+        },
+        {
+          "type": "value",
+          "heading": "Por qué se siente diferente aquí",
+          "items": [
+            {
+              "title": "Diseñado contigo",
+              "body": "Apruebas la dirección mientras Betty trabaja, así no hay sorpresas frente al espejo."
+            },
+            {
+              "title": "Una silla privada y sin prisas",
+              "body": "Tu tiempo es tuyo, de principio a fin — sin línea de producción, sin que te pasen de mano en mano."
+            },
+            {
+              "title": "Una estilista, tu look completo",
+              "body": "Uñas, cabello y acabado de la persona que ya conoce tu gusto — y, según lleguen tus momentos, mantenimiento de color y uñas a tu ritmo."
+            }
+          ]
+        },
+        {
+          "type": "contact",
+          "heading": "Cuando tú quieras",
+          "body": "Cuéntale a Betty lo que estás planeando y ella se encarga del resto.",
+          "form": {
+            "enabled": false
+          },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "portfolio",
+      "path": "/portfolio",
+      "seo": {
+        "title": "Portafolio | Cabello, Color y Uñas Reales — Styling Betty Miami",
+        "description": "Mira trabajos reales de antes y después del estudio de Styling Betty en Miami — recogidos de novia, transformaciones de color, diseño de uñas personalizado y glam para eventos.",
+        "h1": "El trabajo",
+        "keywords": [
+          "portafolio de cabello miami",
+          "peinado de novia miami",
+          "arte de uñas miami"
+        ]
+      },
+      "schema": {
+        "type": "HairSalon"
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "El trabajo",
+          "subhead": "Looks auténticos de Styling Betty — cabello, color, uñas y glam para eventos, desde el estudio.",
+          "image": {
+            "publicId": "styling-betty/photo-19-9c53f8d6-1260-4226-bc80-8ef56a0519f2",
+            "alt": "Rizos color caoba intenso peinados en ondas voluminosas y brillantes en Styling Betty en Miami",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "gallery",
+          "heading": "Antes y después",
+          "intro": "Transformaciones reales desde la silla de Betty — mostradas completas, nunca recortadas.",
+          "columns": 2,
+          "fit": "contain",
+          "items": [
+            {
+              "publicId": "styling-betty/photo-24-img-20251216-wa0045",
+              "alt": "Antes y después de un tratamiento de alisado — cabello natural con frizz a la izquierda, cabello liso y brillante a la derecha",
+              "tag": "Antes y después",
+              "caption": "Del frizz al espejo — una transformación de alisado y brushing."
+            },
+            {
+              "publicId": "styling-betty/photo-10-img-20251216-wa0037",
+              "alt": "Un maquillaje de glam suave mostrado antes y después de la aplicación",
+              "tag": "Antes y después",
+              "caption": "Glam suave, de principio a fin."
+            },
+            {
+              "publicId": "styling-betty/photo-12-img-20251216-wa0035",
+              "alt": "Un maquillaje para evento mostrado antes y después",
+              "tag": "Antes y después",
+              "caption": "Glam lista para el evento."
+            },
+            {
+              "publicId": "styling-betty/photo-30-img-20251216-wa0055",
+              "alt": "Maquillaje de ojos mostrado antes y después, con una mirada definida y realzada",
+              "tag": "Antes y después",
+              "caption": "Mirada definida y realzada."
+            },
+            {
+              "publicId": "styling-betty/photo-18-img-20251216-wa0049",
+              "alt": "Diseño de cejas y maquillaje mostrados paso a paso en cuatro etapas",
+              "tag": "Paso a paso",
+              "caption": "Cejas y glam, paso a paso."
+            }
+          ]
+        },
+        {
+          "type": "gallery",
+          "heading": "Más del trabajo",
+          "intro": "Cabello, color, uñas y estilismo para eventos — todo de una sola estilista que diseña el look contigo.",
+          "columns": 3,
+          "fit": "cover",
+          "items": [
+            {
+              "publicId": "styling-betty/photo-14-5e880c70-9a0b-472b-8193-b3d782378c1e",
+              "alt": "Un elegante recogido para evento con rizos suaves y un delicado detalle floral"
+            },
+            {
+              "publicId": "styling-betty/photo-01-7557eb89-b6ee-4314-8587-5af99fb930cb",
+              "alt": "Un peinado de novia recogido a medias con ondas suaves y un broche de cristal brillante"
+            },
+            {
+              "publicId": "styling-betty/photo-16-a1e542a4-53e2-48e7-841c-c256b330fa03",
+              "alt": "Cabello largo castaño peinado en ondas brillantes y voluminosas"
+            },
+            {
+              "publicId": "styling-betty/photo-39-c45f34fe-058a-4b48-ae0a-3cd61f8c8487",
+              "alt": "Cabello color caoba intenso peinado en rizos brillantes y con movimiento"
+            },
+            {
+              "publicId": "styling-betty/photo-06-tempimage5n0pf8",
+              "alt": "Cabello largo tras un color brillante y un brushing con ondas"
+            },
+            {
+              "publicId": "styling-betty/photo-08-img-20251216-wa0047",
+              "alt": "Una manicura en gel roja y brillante con uñas decoradas en glitter dorado"
+            },
+            {
+              "publicId": "styling-betty/photo-13-img-20251216-wa0043",
+              "alt": "Arte de uñas personalizado y detallado, pintado a mano"
+            },
+            {
+              "publicId": "styling-betty/photo-28-img-20251216-wa0044",
+              "alt": "Arte de uñas en turquesa con detalles pintados a mano"
+            },
+            {
+              "publicId": "styling-betty/photo-27-9e929b0e-6c14-418e-afc6-4489605e1b91",
+              "alt": "Un look para evento con rizos voluminosos y glam impecable"
+            },
+            {
+              "publicId": "styling-betty/photo-21-img-20251216-wa0058",
+              "alt": "Maquillaje para evento suave y luminoso con un acabado impecable"
+            }
+          ]
+        },
+        {
+          "type": "contact",
+          "heading": "¿Te encanta un look? Diseñemos el tuyo.",
+          "body": "Llama o escribe por WhatsApp al estudio y cuéntale a Betty lo que tienes en mente.",
+          "form": {
+            "enabled": false
+          },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "path": "/about",
+      "seo": {
+        "title": "Sobre Betty | Belleza Personalizada en Miami — Styling Betty",
+        "description": "Conoce a la estilista detrás de Styling Betty — una especialista en diseño de uñas y color de cabello en Miami que diseña tu look completo contigo, en privado y sin prisas.",
+        "h1": "Conoce a Styling Betty",
+        "keywords": [
+          "estilista miami",
+          "salón personalizado miami"
+        ]
+      },
+      "schema": {
+        "type": "HairSalon"
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "Conoce a Styling Betty",
+          "subhead": "Donde comienza tu viaje de belleza — y la confianza brilla en cada hebra y cada uña.",
+          "image": {
+            "publicId": "styling-betty/photo-33-tempimagem2agtw",
+            "alt": "Un retrato de belleza impecable con cabello borgoña intenso y glam suave, que representa el estilo del estudio Styling Betty",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "guide",
+          "heading": "Belleza que se siente como tú",
+          "empathy": "Demasiados salones te apuran y te entregan un look que no es tuyo. Betty creó Styling Betty para ser todo lo contrario — un estudio privado donde tu look se diseña contigo, de la mano de alguien que se especializa en diseño de uñas y color de cabello y que trata tu cita como tuya y de nadie más.",
+          "authority": [
+            "Especialista en diseño de uñas y color de cabello",
+            "Estudio privado, solo con cita",
+            "Productos premium",
+            "Un portafolio real de cabello, uñas y glam"
+          ],
+          "image": {
+            "publicId": "styling-betty/photo-26-img-7544",
+            "alt": "Una clienta de Styling Betty con un brushing brillante y glam natural en el estudio de Miami",
+            "focal": "center"
+          }
+        },
+        {
+          "type": "contact",
+          "heading": "Ven y compruébalo",
+          "body": "Reserva una cita privada y diseñemos tu look juntas.",
+          "form": {
+            "enabled": false
+          },
+          "showNap": true
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "path": "/contact",
+      "seo": {
+        "title": "Reserva una Cita | Styling Betty — Miami",
+        "description": "Reserva tu cita privada en Styling Betty en Miami. Llama o escribe por WhatsApp al (786) 227-1350 para color de cabello, diseño de uñas y estilismo para eventos.",
+        "h1": "Reserva tu cita",
+        "keywords": [
+          "reservar cita de cabello miami",
+          "contacto styling betty miami"
+        ]
+      },
+      "schema": {
+        "type": "HairSalon"
+      },
+      "sections": [
+        {
+          "type": "contact",
+          "heading": "Reserva tu cita",
+          "body": "Cuéntale a Betty sobre tu día — tu evento, tu look o simplemente que quieres sentirte arreglada — y ella se encarga del resto. La forma más rápida de comunicarte con el estudio es una llamada o un mensaje de WhatsApp al (786) 227-1350.",
+          "form": {
+            "enabled": false
+          },
+          "showNap": true
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "blurb": "Styling Betty — color de cabello, diseño de uñas y estilismo para eventos de lujo en Miami, solo con cita.",
+    "showHours": true
+  },
+  "flags": [],
+  "branding": {
+    "logo": {
+      "publicId": "styling-betty/photo-35-tempimageyxneum",
+      "alt": "Logo de Styling Betty — un retrato en líneas doradas de una mujer con cabello peinado y uñas arregladas",
+      "transforms": "e_make_transparent:18,c_fit,f_png"
+    }
+  },
+  "i18n": {
+    "enabled": true
+  },
+  "ui": {
+    "footerExplore": "Explora",
+    "footerContact": "Contacto",
+    "footerHours": "Horario",
+    "rights": "Todos los derechos reservados.",
+    "whatsappCta": "Escribe al estudio por WhatsApp →",
+    "openMenu": "Abrir menú"
+  }
+}

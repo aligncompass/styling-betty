@@ -12,6 +12,11 @@ const phOn = Boolean(ph?.enabled && ph?.apiKey);
 // Canonical = apex site + this page's path (which already includes the base/slug).
 const canonical = new URL(Astro.url.pathname, Astro.site ?? meta.siteUrl).href;
 const seo = page.seo ?? {};
+const i18nOn = content.i18n?.enabled;
+const _lp = (Astro.url.pathname.replace(/\/+$/, '') || '/');
+const _rel = _lp === '/es' ? '/' : (_lp.startsWith('/es/') ? _lp.slice(3) : _lp);
+const enHref = new URL(_rel === '/' ? '/' : _rel, Astro.site ?? meta.siteUrl).href;
+const esHref = new URL('/es' + (_rel === '/' ? '/' : _rel), Astro.site ?? meta.siteUrl).href;
 
 // Design tokens → CSS variables. Single source of truth is content.json.design.
 const c = design.colors;
@@ -65,6 +70,13 @@ const ogImg = ogImage
     <title>{seo.title || meta.businessName}</title>
     {seo.description && <meta name="description" content={seo.description} />}
     <link rel="canonical" href={canonical} />
+    {i18nOn && (
+      <>
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="es" href={esHref} />
+        <link rel="alternate" hreflang="x-default" href={enHref} />
+      </>
+    )}
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo.title || meta.businessName} />

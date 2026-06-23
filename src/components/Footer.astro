@@ -2,6 +2,7 @@
 import { cldUrl } from '../lib/cloudinary.js';
 const { content } = Astro.props;
 const { meta, nap, nav = [], footer = {}, cloudinary = {}, branding = {} } = content;
+const ui = content.ui ?? {};
 const logo = branding.logo;
 const logoUrl = logo && cloudinary.cloudName ? cldUrl(cloudinary.cloudName, logo.publicId, { width: 140, transforms: logo.transforms || 'c_fit,f_png' }) : '';
 const year = new Date().getFullYear();
@@ -15,7 +16,7 @@ const year = new Date().getFullYear();
       {footer.blurb && <p class="mt-2 text-sm text-muted">{footer.blurb}</p>}
     </div>
     <nav aria-label="Footer">
-      <p class="text-xs font-semibold uppercase tracking-wide text-muted">Explore</p>
+      <p class="text-xs font-semibold uppercase tracking-wide text-muted">{ui.footerExplore || 'Explore'}</p>
       <ul class="mt-3 space-y-2">
         {nav.map((item) => (
           <li><a href={item.href} class="text-sm text-muted hover:text-ink">{item.label}</a></li>
@@ -23,7 +24,7 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide text-muted">Contact</p>
+      <p class="text-xs font-semibold uppercase tracking-wide text-muted">{ui.footerContact || 'Contact'}</p>
       <ul class="mt-3 space-y-2 text-sm text-muted">
         {nap.phone && <li><a href={`tel:${nap.phone}`} class="hover:text-ink">{nap.phone}</a></li>}
         {nap.email && <li><a href={`mailto:${nap.email}`} class="hover:text-ink">{nap.email}</a></li>}
@@ -33,7 +34,7 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide text-muted">Hours</p>
+      <p class="text-xs font-semibold uppercase tracking-wide text-muted">{ui.footerHours || 'Hours'}</p>
       <ul class="mt-3 space-y-2 text-sm text-muted">
         {footer.showHours && nap.hours && <li>{nap.hours}</li>}
         {nap.serviceArea && <li>{nap.serviceArea}</li>}
@@ -42,7 +43,7 @@ const year = new Date().getFullYear();
   </div>
   <div class="border-t border-line">
     <p class="mx-auto max-w-ac px-6 py-5 text-xs text-muted">
-      © {year} {nap.name || meta.businessName}. All rights reserved.
+      © {year} {nap.name || meta.businessName}. {ui.rights || 'All rights reserved.'}
     </p>
   </div>
 </footer>

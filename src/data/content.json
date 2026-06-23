@@ -518,5 +518,16 @@
       "alt": "Styling Betty logo — a gold line-art portrait of a woman with styled hair and manicured nails",
       "transforms": "e_make_transparent:18,c_fit,f_png"
     }
+  },
+  "i18n": {
+    "enabled": true
+  },
+  "ui": {
+    "footerExplore": "Explore",
+    "footerContact": "Contact",
+    "footerHours": "Hours",
+    "rights": "All rights reserved.",
+    "whatsappCta": "WhatsApp the studio →",
+    "openMenu": "Open menu"
   }
 }
